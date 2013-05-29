@@ -13,6 +13,9 @@
               = link_to fork_project_path(@project), title: "Fork", class: "btn grouped", method: "POST" do
                 %i.icon-copy
                 Fork
+          = link_to "github-mac://openRepo/#{@project.ssh_url_to_repo}", class: "btn grouped" do
+              %i.icon-download-alt
+              Open in Github.app
           - if can? current_user, :download_code, @project
             = link_to archive_project_repository_path(@project), class: "btn grouped" do
               %i.icon-download-alt
